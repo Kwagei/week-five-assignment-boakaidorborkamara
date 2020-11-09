@@ -36,16 +36,21 @@
         }
 
         .upper{
-            border-bottom: 1px solid  rgb(2, 2, 54);;
+            /* background-color: rgb(2, 2, 54); */
             padding-bottom: 30px;
         }
 
+        .upper input{
+            padding: 5px;
+            margin-top: 5px;
+        }
+
         .upper h1{
-            color:  rgb(2, 2, 54);;
+            color: rgb(2, 2, 54);
             font-weight: bolder;
             font-size: 3em;
             margin-bottom: 30px;
-            border-bottom: 1px solid  rgb(2, 2, 54);;
+            border-bottom: 1px solid rgb(2, 2, 54);
         }
 
         .upper :nth-child(3){
@@ -82,11 +87,12 @@
             <div class="upper"> 
                 <p>WELCOME TO</p>
                 <h1>NUM-GUESSER <br> GAME</h1>
-                <p>Let's generate a number, then you guess it!</p>
+                <label for="name">Enter Player Name:</label> <br>
+                <input type="text" placeholder="John Brown">
             </div>  
             <div class="lower">
-                <a href=""><button>Start Game</button></a>
-                <button>Exit</button>
+                <button>Continue</button>
+                <button>Back</button>
             </div>
         </div>
     </main>

@@ -20,14 +20,14 @@ function evaluateInput(){
     else if(parseInt(playerInput.value) === correctAnswer)
     {
        document.getElementById("finalResult").innerHTML="You Win"
-       document.getElementById("finalResult").style="padding: 15px;"
+       document.getElementById("finalResult").style="padding: 10px;"
        result.style.backgroundColor = "white";
         result.style.color = "rgb(2, 2, 54)";
     }
     else if(parseInt(playerInput.value) > 100)
     {
         document.getElementById("finalResult").innerHTML="Oops, Out of Range"
-        document.getElementById("finalResult").style="padding: 15px;"
+        document.getElementById("finalResult").style="padding: 6px;"
         result.style.backgroundColor = "white";
         result.style.color = "red";
         
@@ -35,14 +35,14 @@ function evaluateInput(){
     else if(playerInput.value < correctAnswer)
     {
         document.getElementById("finalResult").innerHTML="Aww, Too Low"
-        document.getElementById("finalResult").style="padding: 15px;"
+        document.getElementById("finalResult").style="padding: 6px;"
         result.style.backgroundColor = "white";
         result.style.color = "red";
     }
     else if(parseInt(playerInput.value) > correctAnswer)
     {
         document.getElementById("finalResult").innerHTML="Wow, Too High"
-        document.getElementById("finalResult").style="padding: 15px;"
+        document.getElementById("finalResult").style="padding: 6px;"
         result.style.backgroundColor = "white";
         result.style.color = "red";
     }
@@ -50,8 +50,9 @@ function evaluateInput(){
     else
     {
         console.log("You Failed");
-        document.getElementById("finalResult").style="padding: 15px;"
+        document.getElementById("finalResult").style="padding: 6px;"
     }
+
 }
 //reducing the amout of the the player has to guess
 let guess_counter = 10;
@@ -77,6 +78,7 @@ function clearPreviousResult(){
     result.innerHTML = "";
     // result.style.display = "none";
     result.style.backgroundColor="yellow";
+    playerInput.value = "";
 }
 
 //reset the game to default
@@ -87,7 +89,7 @@ function resetGame(){
 //check if chances is over
 function checkGuessChances(){
     if(guess_counter === 0){
-        result.innerText = "Chances over, you loose";
+        result.innerText = "Chances over, you loose.                                  The correct number is " + correctAnswer ;
         result.style.backgroundColor = "white";
         result.style.color = "red";
     }

@@ -70,20 +70,35 @@ let previous_guesses = [];
 function displayPreviousGuesses(){
     previous_guesses.push(playerInput.value);
     number_guessed.innerHTML = previous_guesses; 
-    console.log(previous_guesses);
 }
 
 //clear previous result upon inputing another value
 function clearPreviousResult(){
     result.innerHTML = "";
+    // result.style.display = "none";
+    result.style.backgroundColor="yellow";
 }
+
+//reset the game to default
 function resetGame(){
     document.location.href="";
 }
+
+//check if chances is over
+function checkGuessChances(){
+    if(guess_counter === 0){
+        result.innerText = "Chances over, you loose";
+        result.style.backgroundColor = "white";
+        result.style.color = "red";
+    }
+}
+
 submit_btn.addEventListener("click" , evaluateInput);
 submit_btn.addEventListener("click" , reduceGuessChances);
 submit_btn.addEventListener("click" , displayPreviousGuesses);
+submit_btn.addEventListener("click" , checkGuessChances);
 playerInput.addEventListener("focus" , clearPreviousResult);
+cancel_btn.addEventListener("click" , resetGame);
 
 
 

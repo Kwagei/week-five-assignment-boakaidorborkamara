@@ -63,6 +63,14 @@ main{
     margin-bottom: 5px;
 }
 
+#resultsArea p {
+    margin-bottom: 5px;
+}
+
+#resultsArea span{
+    font-weight: bold;
+}
+
 .playGround{
     display: flex;
     flex-direction: column;

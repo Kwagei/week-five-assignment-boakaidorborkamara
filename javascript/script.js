@@ -1,30 +1,50 @@
-
-
-var correctAnswer = Math.floor(Math.random() *100);
+let correctAnswer = Math.floor(Math.random() *100);
+let guess_chances = document.getElementById("guessesRemaining");
+let number_guessed = document.getElementById("previousGuesses")
 console.log(correctAnswer);
+let submit_btn = document.getElementById("submitBtn");
+let cancel_btn = document.getElementById("cancelBtn");
+let playerInput = document.getElementById("guess");
+let result = document.getElementById("finalResult");
 
+//checking if user is equal to radom number
 function evaluateInput(){
-    var playerInput = document.getElementById("guess").value;
-    console.log(playerInput);
-    if(playerInput == correctAnswer)
+
+    if(parseInt(playerInput.value) === 0 || playerInput === undefined)
+    {
+        document.getElementById("finalResult").innerHTML="Guess a number greater than zero"
+        document.getElementById("finalResult").style="padding: 15px;" 
+        result.style.backgroundColor = "white";
+        result.style.color = "red";
+    }
+    else if(parseInt(playerInput.value) === correctAnswer)
     {
        document.getElementById("finalResult").innerHTML="You Win"
-       document.getElementById("finalResult").style="padding: 15px; color:yellow"
+       document.getElementById("finalResult").style="padding: 15px;"
+       result.style.backgroundColor = "white";
+        result.style.color = "rgb(2, 2, 54)";
     }
-    else if(playerInput > correctAnswer && playerInput>100)
+    else if(parseInt(playerInput.value) > 100)
     {
         document.getElementById("finalResult").innerHTML="Oops, Out of Range"
         document.getElementById("finalResult").style="padding: 15px;"
+        result.style.backgroundColor = "white";
+        result.style.color = "red";
+        
     }
-    else if(playerInput < correctAnswer)
+    else if(playerInput.value < correctAnswer)
     {
         document.getElementById("finalResult").innerHTML="Aww, Too Low"
         document.getElementById("finalResult").style="padding: 15px;"
+        result.style.backgroundColor = "white";
+        result.style.color = "red";
     }
-    else if(playerInput > correctAnswer)
+    else if(parseInt(playerInput.value) > correctAnswer)
     {
         document.getElementById("finalResult").innerHTML="Wow, Too High"
         document.getElementById("finalResult").style="padding: 15px;"
+        result.style.backgroundColor = "white";
+        result.style.color = "red";
     }
     
     else
@@ -33,8 +53,37 @@ function evaluateInput(){
         document.getElementById("finalResult").style="padding: 15px;"
     }
 }
+//reducing the amout of the the player has to guess
+let guess_counter = 10;
+guess_chances.innerHTML = guess_counter;
 
+//Reduce the amout of chance player has after the guess a wrong number
+function reduceGuessChances(){
+    if(parseInt(playerInput.value) !== correctAnswer){
+        guess_counter--
+        guess_chances.innerHTML = guess_counter;
+    }
+}
 
+//show previous guesses made by player
+let previous_guesses = [];
+function displayPreviousGuesses(){
+    previous_guesses.push(playerInput.value);
+    number_guessed.innerHTML = previous_guesses; 
+    console.log(previous_guesses);
+}
+
+//clear previous result upon inputing another value
+function clearPreviousResult(){
+    result.innerHTML = "";
+}
 function resetGame(){
     document.location.href="";
 }
+submit_btn.addEventListener("click" , evaluateInput);
+submit_btn.addEventListener("click" , reduceGuessChances);
+submit_btn.addEventListener("click" , displayPreviousGuesses);
+playerInput.addEventListener("focus" , clearPreviousResult);
+
+
+

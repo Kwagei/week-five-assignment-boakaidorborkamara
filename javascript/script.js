@@ -7,6 +7,9 @@ let cancel_btn = document.getElementById("cancelBtn");
 let playerInput = document.getElementById("guess");
 let result = document.getElementById("finalResult");
 
+//close game
+
+
 //checking if user is equal to radom number
 function evaluateInput(){
 
@@ -94,6 +97,13 @@ function checkGuessChances(){
         result.style.color = "red";
     }
 }
+
+// let exitBtn = document.getElementById("closeGame");
+// exitBtn.addEventListener("click" , closeGame);
+// function closeGame(){
+//     window.close();
+//     console.log("close");
+// }
 
 submit_btn.addEventListener("click" , evaluateInput);
 submit_btn.addEventListener("click" , reduceGuessChances);

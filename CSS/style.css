@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(2, 2, 54);
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    width: 80vw;
+}
+
+#buttonOptionArea{
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+}
+
+button{
+    display: inline-block;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-right: 45px;
+    margin-left: 45px;
+    color: white;
+    background-color: rgb(2, 2, 54) ;
+    border-radius: 20px;
+    outline-style: none;
+    border: 1px solid white;
+}
+
+button:hover{
+    background-color: white;
+    color: rgb(2, 2, 54);
+    /* transform: scale(1.1,1.1); */
+    cursor: pointer;
+}
+
+button:active{
+    background-color: white;
+    color: rgb(2, 2, 54);
+    font-weight: bold;
+    /* transform: scale(1.1,1.1); */
+    cursor: pointer;
+}
+
+#welcomeMessage h1{
+    font-size: 3em;
+}
+
+#welcomeMessage p{
+    font-size: 3em;
+    color: yellow;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(2, 2, 54);
+}

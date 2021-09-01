@@ -7,20 +7,59 @@
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-    <div id="container">
-        <div id="welcomeMessage">
-            <p>Welcome To</p>
-            <h1>NUMERIC GUESS GAME</h1>
-        </div>
-        <div id="buttonOptionArea">
-            <a href="playsection.html"><button type="button"> Play </button></a>
-            <button type="button" id="closeGame">Exit</button>
-        </div>
-        <!-- <div id="copyRight">
-            <p> &copy;2020 Boakai Dorbor Kamara <br> Coded By Me</p>
-        </div> -->
-    </div>
+    <main>
+            <!-- welcome section with input field for player to input name  -->
+            <div id="welcome-message-section">
+                <div>
+                    <h1>NUMERIC GUESS GAME</h1>
+                    <input type="text" placeholder="Enter Player Name" id="player-name">
+                </div>
+                <div id="buttonOptionArea">
+                    <button type="button" id="start-game-btn"> Start Game </button>
+                </div>
+            </div>
 
-    <script src="./javascript/script.js"></script> 
+            <!-- contains game instructions  -->
+            <div id="instructions-ground">
+                <div id="gameName">
+                    <h1>NUMERIC GUESS GAME</h1>
+                </div>
+                <div id="instructionsArea">
+                    <ul>
+                        <h3>>> Game Info & Instructions <<</h3>
+                        <li>The computer generated a number between 1 to 100.</li>
+                        <li>Enter a number between the range given to guess the number generated.</li>
+                        <li>You have 10 guesses to try.</li>
+                    </ul>
+                </div>
+                <div>
+                    <button id="done-reading-btn">Done Reading</button>
+                </div>
+                 
+            </div>
+   
+            <!-- the game field  -->
+            <div class="playGround" id="game-play-ground">
+                <div class="guessArea"> 
+                    <h1>NUMERIC GUESS GAME</h1>
+                    <div id="resultsArea"> 
+                        <p >You Have  <span id="guessesRemaining">10</span> Guesses Remaining </p>
+                        <p >Previous Guesses: <br> <span id="previousGuesses"></span> </p>
+                        <p id="finalResult"></p>
+                    </div> 
+                    <input type="number"  placeholder="GUESS" id="guess">
+                </div>  
+                
+                <div class="lower">
+                    <button type="button" id="submitBtn"> Submit Number</button>
+                    <button  type="reset" id="cancelBtn" >Restart</button>
+                </div>
+            </div>
+
+            <footer>
+                <p>Coded By: <a href="https://github.com/boakaidorborkamara" target="_blank">Boakai Dorbor Kamara</a></p>
+            </footer>
+    </main>
+   <script src="./javascript/script.js"></script> 
 </body>
 </html>
